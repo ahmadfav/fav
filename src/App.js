@@ -5,8 +5,6 @@ import {
     Globe,
     CheckCircle,
     Star,
-    Menu,
-    X,
     ChevronRight,
     Clock,
     Users,
@@ -20,11 +18,9 @@ import {
 } from 'lucide-react';
 
 const App = () => {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeFaq, setActiveFaq] = useState(null);
     const [activeCategory, setActiveCategory] = useState('quran'); // 'arabic' или 'quran'
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
     const toggleFaq = (index) => setActiveFaq(activeFaq === index ? null : index);
 
     const courseCategories = {
@@ -247,7 +243,7 @@ const App = () => {
                                 <div className="aspect-[4/3] bg-slate-100 rounded-2xl overflow-hidden relative group">
                                     <div className="absolute inset-0 bg-gradient-to-br from-[#003049] to-[#001a29] flex items-center justify-center">
                                         <div className="opacity-10 absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/arabesque.png')]"></div>
-                                        <span className="text-9xl text-white/10 font-serif select-none pointer-events-none transform group-hover:scale-110 transition duration-1000" dir="rtl">اقرأ</span>
+                                        <span className="text-9xl text-white font-serif select-none pointer-events-none transform group-hover:scale-110 transition duration-1000" dir="rtl">اقرأ</span>
                                     </div>
                                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
                                         {/*<p className="text-3xl font-bold font-serif mb-1" dir="rtl">اللغة العربية</p>*/}
