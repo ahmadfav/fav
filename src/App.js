@@ -149,7 +149,7 @@ const App = () => {
         // },
         {
             question: "Как проходят уроки?",
-            answer: "Уроки проходят онлайн на платформе Контур.Толк. Платформа позволяет проводить занятия в формате живого общения с преподавателем: ученики видят и слышат учителя, могут задавать вопросы и получать обратную связь в реальном времени. Для занятий требуется только стабильный интернет и любое устройство — компьютер, планшет или телефон."
+            answer: "Уроки проходят онлайн на платформе Zoom. Формат занятий — живое общение с преподавателем: ученики видят и слышат учителя, могут задавать вопросы и получать обратную связь в реальном времени. Для участия в уроках требуется только стабильный интернет и любое устройство — компьютер, планшет или телефон."
         }
     ];
 
@@ -183,36 +183,13 @@ const App = () => {
                             <span className="font-bold text-2xl tracking-tight text-[#003049]">Academy Fav</span>
                         </div>
 
-                        <div className="hidden md:flex space-x-8 items-center text-sm font-medium">
-                            <a href="#about" className="text-slate-600 hover:text-[#790000] transition">О нас</a>
-                            <a href="#courses" className="text-slate-600 hover:text-[#790000] transition">Курсы</a>
-                            <a href="#method" className="text-slate-600 hover:text-[#790000] transition">Методика</a>
-                            <a href="#reviews" className="text-slate-600 hover:text-[#790000] transition">Отзывы</a>
-                            <a href="https://wa.me/79899290505" target={'_blank'} className="bg-[#790000] text-white px-6 py-2.5 rounded-full hover:bg-[#5a0000] transition shadow-lg shadow-[#790000]/20 transform hover:-translate-y-0.5 active:translate-y-0">
+                        <div className="flex space-x-8 items-center text-sm font-medium">
+                            <a href="https://wa.me/79899290505" target={'_blank'} className="bg-[#790000] text-white px-6 py-2.5 rounded-full hover:bg-[#5a0000] transition shadow-lg shadow-[#790000]/20 transform hover:-translate-y-0.5 active:translate-y-0" rel="noreferrer">
                                 Пробный урок
                             </a>
                         </div>
-
-                        <div className="md:hidden flex items-center">
-                            <button onClick={toggleMenu} className="text-slate-600 hover:text-[#790000] focus:outline-none p-2">
-                                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
-                            </button>
-                        </div>
                     </div>
                 </div>
-
-                {isMenuOpen && (
-                    <div className="md:hidden bg-white border-t border-slate-100 absolute w-full shadow-lg z-40">
-                        <div className="px-4 pt-2 pb-6 space-y-2">
-                            <a href="#about" onClick={toggleMenu} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-[#790000] rounded-md font-medium">О нас</a>
-                            <a href="#courses" onClick={toggleMenu} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-[#790000] rounded-md font-medium">Курсы</a>
-                            <a href="#method" onClick={toggleMenu} className="block px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-[#790000] rounded-md font-medium">Методика</a>
-                            <a href="https://wa.me/79899290505" target={'_blank'} className="w-full mt-4 bg-[#790000] text-white px-6 py-3 rounded-lg font-medium">
-                                Записаться бесплатно
-                            </a>
-                        </div>
-                    </div>
-                )}
             </nav>
 
             {/* Hero Section */}
@@ -225,10 +202,10 @@ const App = () => {
                     <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
                         <div className="space-y-8 z-10">
                             <div className="inline-flex items-center gap-2 bg-white border border-[#790000]/10 px-4 py-1.5 rounded-full text-[#790000] font-medium text-sm shadow-sm">
-                <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#790000]/40 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#790000]"></span>
-                </span>
+                                <span className="relative flex h-2 w-2">
+                                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#790000]/40 opacity-75"></span>
+                                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#790000]"></span>
+                                </span>
                                 Идет набор в группы
                             </div>
 
@@ -244,7 +221,7 @@ const App = () => {
                             </p>
 
                             <div className="flex flex-col sm:flex-row gap-4 pt-2">
-                                <a href="https://wa.me/79899290505" target={'_blank'} className="px-8 py-4 bg-[#790000] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-[#790000]/20 flex items-center justify-center gap-2 group hover:bg-[#5a0000] hover:-translate-y-1 hover:scale-105 active:scale-95">
+                                <a href="https://wa.me/79899290505" target={'_blank'} className="px-8 py-4 bg-[#790000] text-white rounded-xl font-bold text-lg transition-all duration-300 shadow-xl shadow-[#790000]/20 flex items-center justify-center gap-2 group hover:bg-[#5a0000] hover:-translate-y-1 hover:scale-105 active:scale-95" rel="noreferrer">
                                     Попробовать бесплатно
                                     <ChevronRight size={20} className="group-hover:translate-x-1 transition-transform" />
                                 </a>
@@ -273,20 +250,9 @@ const App = () => {
                                         <span className="text-9xl text-white/10 font-serif select-none pointer-events-none transform group-hover:scale-110 transition duration-1000" dir="rtl">اقرأ</span>
                                     </div>
                                     <div className="absolute bottom-0 left-0 right-0 p-8 bg-gradient-to-t from-black/80 via-black/40 to-transparent text-white">
-                                        <p className="text-3xl font-bold font-serif mb-1" dir="rtl">اللغة العربية</p>
-                                        <p className="text-base opacity-90 font-light tracking-wide">Красота и глубина в каждом слове</p>
+                                        {/*<p className="text-3xl font-bold font-serif mb-1" dir="rtl">اللغة العربية</p>*/}
+                                        {/*<p className="text-base opacity-90 font-light tracking-wide">Красота и глубина в каждом слове</p>*/}
                                     </div>
-                                </div>
-                            </div>
-
-                            {/* Floating rating card */}
-                            <div className="absolute -bottom-8 -left-4 sm:-left-8 z-20 bg-white p-4 rounded-xl shadow-lg border border-slate-100 flex items-center gap-4 animate-bounce-slow max-w-[200px] sm:max-w-none hover:scale-105 transition-transform cursor-default">
-                                <div className="bg-[#790000]/10 p-3 rounded-full text-[#790000] shrink-0">
-                                    <Star className="fill-current" size={24} />
-                                </div>
-                                <div>
-                                    <p className="font-bold text-slate-900 text-lg">4.9/5</p>
-                                    <p className="text-xs text-slate-500">Рейтинг на основе отзывов</p>
                                 </div>
                             </div>
 
@@ -373,20 +339,22 @@ const App = () => {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div className="text-center max-w-3xl mx-auto mb-12">
                         <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Программы обучения</h2>
-                        <div hidden className="inline-flex bg-[#002538] p-1.5 rounded-xl backdrop-blur-sm border border-white/10">
-                            <button
-                                onClick={() => setActiveCategory('arabic')}
-                                className={`px-8 py-3 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeCategory === 'arabic' ? 'bg-white text-[#003049] shadow-lg' : 'text-white/60 hover:text-white'}`}
-                            >
-                                Арабский язык
-                            </button>
-                            <button
-                                onClick={() => setActiveCategory('quran')}
-                                className={`px-8 py-3 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeCategory === 'quran' ? 'bg-white text-[#003049] shadow-lg' : 'text-white/60 hover:text-white'}`}
-                            >
-                                Коран
-                            </button>
-                        </div>
+                        {
+                            false && <div className="none inline-flex bg-[#002538] p-1.5 rounded-xl backdrop-blur-sm border border-white/10">
+                                <button
+                                    onClick={() => setActiveCategory('arabic')}
+                                    className={`px-8 py-3 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeCategory === 'arabic' ? 'bg-white text-[#003049] shadow-lg' : 'text-white/60 hover:text-white'}`}
+                                >
+                                    Арабский язык
+                                </button>
+                                <button
+                                    onClick={() => setActiveCategory('quran')}
+                                    className={`px-8 py-3 rounded-lg text-sm font-bold uppercase transition-all duration-300 ${activeCategory === 'quran' ? 'bg-white text-[#003049] shadow-lg' : 'text-white/60 hover:text-white'}`}
+                                >
+                                    Коран
+                                </button>
+                            </div>
+                        }
                     </div>
 
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 justify-center">
@@ -413,7 +381,7 @@ const App = () => {
                                                 </li>
                                             ))}
                                         </ul>
-                                        <a href={`https://wa.me/79899290505?text=Ассаламу алейкум, хочу записаться на уроки Корана по тарифу "${option.title}"`} target={'_blank'} className="w-full py-4 bg-[#003049] text-white rounded-xl font-bold transition-all duration-300 hover:bg-[#790000] hover:-translate-y-1 hover:scale-105 active:scale-95 shadow-lg">
+                                        <a href={`https://wa.me/79899290505?text=Ассаламу алейкум, хочу записаться на уроки Корана по тарифу "${option.title}"`} target={'_blank'} className="px-4 w-full py-4 bg-[#003049] text-white rounded-xl font-bold transition-all duration-300 hover:bg-[#790000] hover:-translate-y-1 hover:scale-105 active:scale-95 shadow-lg" rel="noreferrer">
                                             Записаться
                                         </a>
                                     </div>
@@ -432,39 +400,47 @@ const App = () => {
                         <p className="text-lg text-slate-600 max-w-2xl mx-auto">Мы разработали систему, которая делает сложное простым, а процесс обучения — увлекательным и понятным для каждого.</p>
                     </div>
 
-                    <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                    <div className="">
                         {/* Visual Element */}
-                        <div className="relative group order-2 lg:order-1">
-                            <div className="absolute -inset-4 bg-[#003049]/5 rounded-[3rem] blur-2xl group-hover:bg-[#003049]/10 transition-colors duration-700"></div>
-                            <div className="relative aspect-square bg-white rounded-[3rem] shadow-2xl p-10 border border-slate-100 flex flex-col justify-center items-center overflow-hidden">
+                        {false && <div className="relative group order-2 lg:order-1">
+                            <div
+                                className="absolute -inset-4 bg-[#003049]/5 rounded-[3rem] blur-2xl group-hover:bg-[#003049]/10 transition-colors duration-700"></div>
+                            <div
+                                className="relative aspect-square bg-white rounded-[3rem] shadow-2xl p-10 border border-slate-100 flex flex-col justify-center items-center overflow-hidden">
                                 <div className="absolute top-0 right-0 p-6 opacity-10">
-                                    <Sparkles size={100} className="text-[#003049]" />
+                                    <Sparkles size={100} className="text-[#003049]"/>
                                 </div>
                                 <div className="w-full space-y-8 relative z-10">
-                                    <div className="p-6 bg-[#003049]/5 rounded-3xl border border-[#003049]/10 shadow-sm transform group-hover:scale-[1.02] transition-transform duration-500">
+                                    <div
+                                        className="p-6 bg-[#003049]/5 rounded-3xl border border-[#003049]/10 shadow-sm transform group-hover:scale-[1.02] transition-transform duration-500">
                                         <div className="flex items-center gap-4 mb-4">
-                                            <div className="w-10 h-10 bg-[#003049] text-white rounded-xl flex items-center justify-center shadow-lg">
-                                                <Layout size={20} />
+                                            <div
+                                                className="w-10 h-10 bg-[#003049] text-white rounded-xl flex items-center justify-center shadow-lg">
+                                                <Layout size={20}/>
                                             </div>
                                             <p className="text-[#003049] font-black text-xl">Наглядный прогресс</p>
                                         </div>
                                         <p className="text-slate-600 text-sm leading-relaxed">
-                                            Наша система автоматически отслеживает навыки чтения и пополнение словарного запаса в реальном времени.
+                                            Наша система автоматически отслеживает навыки чтения и пополнение словарного
+                                            запаса в реальном времени.
                                         </p>
                                     </div>
-                                    <div className="flex gap-4 items-center justify-center bg-slate-50 p-4 rounded-2xl border border-slate-200 border-dashed">
+                                    <div
+                                        className="flex gap-4 items-center justify-center bg-slate-50 p-4 rounded-2xl border border-slate-200 border-dashed">
                                         <div className="flex -space-x-3">
-                                            {[1,2,3,4].map(i => (
-                                                <div key={i} className={`w-10 h-10 rounded-full border-2 border-white bg-[#003049] flex items-center justify-center text-[10px] font-bold text-white shadow-sm opacity-${100 - i*20}`}>
+                                            {[1, 2, 3, 4].map(i => (
+                                                <div key={i}
+                                                     className={`w-10 h-10 rounded-full border-2 border-white bg-[#003049] flex items-center justify-center text-[10px] font-bold text-white shadow-sm opacity-${100 - i * 20}`}>
                                                     {i}
                                                 </div>
                                             ))}
                                         </div>
-                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">+500 активных учеников</p>
+                                        <p className="text-[10px] font-bold text-slate-400 uppercase tracking-widest">+500
+                                            активных учеников</p>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>}
 
                         {/* 4-Point Grid */}
                         <div className="grid sm:grid-cols-2 gap-6 order-1 lg:order-2">
@@ -568,13 +544,13 @@ const App = () => {
                         <p className="text-white/60 text-lg mb-10 max-w-md">Запишитесь на бесплатный вводный урок. Мы определим ваш уровень и ответим на вопросы.</p>
 
                         <div className="flex gap-8 sm:gap-12">
-                            <a href="https://t.me/academyfav" target={'_blank'} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
+                            <a href="https://t.me/academyfav" target={'_blank'} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group" rel="noreferrer">
                                 <div className="bg-[#790000]/20 p-3 rounded-full group-hover:bg-[#790000] transition-colors">
                                     <MessageCircle size={24} className="text-[#790000] group-hover:text-white transition-colors" />
                                 </div>
                                 <span className="font-bold text-xl tracking-wide">Telegram</span>
                             </a>
-                            <a href="https://wa.me/79899290505" target={'_blank'} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group">
+                            <a href="https://wa.me/79899290505" target={'_blank'} className="flex items-center gap-3 text-white/80 hover:text-white transition-colors group" rel="noreferrer">
                                 <div className="bg-[#790000]/20 p-3 rounded-full group-hover:bg-[#790000] transition-colors">
                                     <Globe size={24} className="text-[#790000] group-hover:text-white transition-colors" />
                                 </div>
